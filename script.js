@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
     const themeToggle = document.getElementById('theme-toggle');
+    const git = document.querySelector(".platform-box.github .platform-link");
     
     // Theme toggle functionality
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
     
     if (currentTheme === 'dark') {
+         git.style.backgroundColor = "white";
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
     
@@ -27,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (newTheme === 'dark') {
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            git.style.backgroundColor = "white";
         } else {
             themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+             git.style.backgroundColor = "#333";
         }
     });
     
